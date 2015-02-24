@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UC Davis Health System</title>
+<!--
+    This template can be used for simple app with left side menu that can be opened to switch views, for applications like Youtube App or Gmail app.
+-->  
+    
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+    <!--AppFramework plugin for sliding side menu-->
+    <script type="text/javascript" charset="utf-8" src="appframework/plugins/af.slidemenu.js"></script>
+
+    <!-- phantom library, needed for XDK "legacy" container api calls -->
+    <script src="intelxdk.js"></script>
+    <!-- phantom library, needed for Cordova api calls -->
+    <script src="cordova.js"></script>
+    <!-- phantom library, needed for XDK "legacy" container CORS -->
+    <script src="xhr.js"></script>
+    
+    <script>
+        var onDeviceReady=function(){                             // called when Cordova is ready
+           if( window.Cordova && navigator.splashscreen ) {     // Cordova API detected
+               $.ui.launch(); 
+               navigator.splashscreen.hide() ;                 // hide splash screen
+            }
+        } ;
+        document.addEventListener("deviceready", onDeviceReady, false) ;
+    </script>
+    
+    <script>   
+        $.ui.autoLaunch = false;
+        $.ui.animateHeaders = false;
+                
+        $(document).ready(function(){
+            $.ui.setSideMenuWidth('200px');
+            $.ui.launch();
+        });
+    </script>
+</head>
+<body> 
+<div id="afui">
+    
+    <!--Left Side Menu Navigation bar -->
+    <nav>
+        <ul class="list">
+            <li><a href="#page1" class="icon home">Parking</a></li>
+            <li><a href="#page2" class="icon heart">Transportation</a></li>
+            <li><a href="#page3" class="icon chat">Quick Links</a></li>
+            <li><a href="#page4" class="icon user">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div id="content" style=""> 
+        
+    <!--Main View Pages-->
+		<!--Parking-->
+		<div class="panel" title="Home" id="page1" data-footer="none" selected="true">
+            <header>
+                <a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+                <h1>Parking</h1>
+            </header>
+            <h2>Prize Winners in Transportation Survey</h2>
+			<p>Nearly two dozen employees won prizes by taking Parking and Transportation Services’ 2014 UC Davis Health System Transportation Survey.</p>
+			<p>Parking and Transportation Services conducted the survey in November to obtain information on how employees on the Sacramento campus commute to work. Approximately 4,500 individuals participated in the survey, providing valuable information for planning purposes. Many respondents indicated their interest in a commute that reduces stress as well as cost.</p>
+			<p>Those who took the survey were entered into a drawing for prizes. Those prizes and their winners are as follows...</p>
+        </div>
+        
+		<!--Transportation-->
+        <div class="panel" title="Favorites" id="page2" data-footer="none">
+            <header>
+                <a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+                <h1>Transportation</h1>
+            </header>
+            <h2>Med-Transit (On-Site) Shuttle Services</h2>
+            <p>UC Davis Health System's Med-Transit Shuttle Service offers convenient transportation to patients, visitors, students and employees within the UC Davis Medical Center campus. Routes connect the hospital with various buildings, parking lots, and other locations within the Medical Center area, including public transportation.</p>
+            <h2>Routes &amp; Schedules</h2>
+			<p>All shuttle routes stop at the UC Davis Medical Center's Transit Center, located on "X" St. If your destination is serviced by another route, you may transfer to the appropriate shuttle from this terminal. Click on the tabs below for route information.</p>
+        </div>
+        
+		<!--Quick Links-->
+        <div class="panel" title="Messages" id="page3" data-footer="none">
+            <header>
+                <a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+                <h1>Quick Links</h1>
+            </header>
+            <h2>Quick Links</h2>
+            <p>
+			<ul>
+			<li>Employee Appointment Permit</li>
+			<li>Special Events Form</li>
+			<li>On-Site Shuttle Schedule</li>
+			<li>Intercampus Bus Schedule</li>
+			<li>Green Commuter Programs</li>
+			<li>Departmental Purchase Form</li>
+			<ul>
+			</p>
+        </div>
+        
+		<!--Contact-->
+        <div class="panel" title="Profile" id="page4" data-footer="none">
+            <header>
+                <a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+                <h1>Contact</h1>
+            </header>
+            <h2>Contact Parking &amp; Transportation Services</h2>
+            <p>The Parking & Transportation Services office is located on the first floor of the Facilities Support Services Building (FSSB):</p>
+
+            <p>4800 2nd Avenue, Suite 1100<br />
+Sacramento, CA 95817<br />
+<a href="http://www.ucdmc.ucdavis.edu/parking/map/" target="_blank">map</a></p>
+
+            <p><b>Main Phone:</b></p>
+
+            <p>(916) 734-2687<br />
+(916) 734-0600 Fax</p>
+
+            <p><b>Citation Appeals Hearings:</b></p>
+
+            <p>(916) 734-2239</p>
+
+            <p><b>Office Hours:</b></p>
+
+            <p>7:30 a.m. – 5:00 p.m., Monday – Friday<br />
+(Closed holidays)</p>
+
+			
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>    
